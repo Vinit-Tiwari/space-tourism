@@ -6,7 +6,6 @@ const { default: Layout } = require("@/components/Layout");
 function Destination(props) {
   const { displayData } = props;
   const router = useRouter();
-  console.log(displayData);
   return (
     <Layout>
       <span className={style.container}>

@@ -39,7 +39,7 @@ function Navbar() {
         <button
           type="button"
           onClick={() => {
-            router.push("/crew");
+            router.push("/crew/commander");
           }}
         >
           02 CREW

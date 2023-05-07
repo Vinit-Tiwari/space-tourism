@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../public/images/crew/background-crew-desktop.jpg");
+}
+.circle{
+    display: flex;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: #979797;
+}
