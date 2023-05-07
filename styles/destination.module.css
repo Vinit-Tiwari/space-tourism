@@ -1,12 +1,38 @@
 .container {
   width: 100%;
+  padding: 8rem 2rem 2rem 2rem;
   display: flex;
   align-items: center;
+  gap: 2rem;
   justify-content: center;
   color: white;
   flex-direction: column;
-  background-image: url('../public/images/destination/background-destination-desktop.jpg');
+  background-image: url("../public/images/destination/background-destination-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.name {
+  font-size: 85px;
+}
+.desc {
+  color: #d0d6f9;
+}
+.attributes {
+  font-size: 14px;
+  color: #d0d6f9;
+  width: max-content;
+  text-align: center;
+}
+.value {
+  font-size: 28px;
+}
+.pageTitle {
+  display: flex;
+  max-width: 70rem;
+  width: 100%;
+  border: 1px solid red;
+  gap: 1rem;
+  font-size: 28px;
 }

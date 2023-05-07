@@ -30,7 +30,7 @@ function Navbar() {
         <button
           type="button"
           onClick={() => {
-            router.push("/destination");
+            router.push("/destination/moon");
           }}
         >
           01 DESTINATION

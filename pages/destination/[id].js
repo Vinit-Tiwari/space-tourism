@@ -1,18 +1,20 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import style from '../../styles/destination.module.css'
+import style from "../../styles/destination.module.css";
 
 const { default: Layout } = require("@/components/Layout");
 
 function Destination(props) {
   const { displayData } = props;
+  const router = useRouter();
   console.log(displayData);
   return (
     <Layout>
       <span className={style.container}>
-        <p>01 PICK YOUR DESTINATION</p>
-        <span className="flex gap-2 items-center justify-center border-red-800 border-solid border-2">
-          <span className="image">
+        <span className="flex gap-[1rem] w-full max-w-[70rem] justify-center md:justify-start lg:justify-start md:text-[20px] text-[20px] lg:text-[28px]">
+          <p className="text-[#D0D6F9]">01</p> PICK YOUR DESTINATION
+        </span>
+        <span className="flex flex-col md:flex-col lg:flex-row gap-5 items-center w-full max-w-[70rem] justify-between">
+          <span className="image ">
             <style jsx>
               {`
                 .image {
@@ -20,36 +22,65 @@ function Destination(props) {
                   background-repeat: no-repeat;
                   background-size: contain;
                   display: flex;
-                  width: 25rem;
-                  height: 25rem;
+                  width: 100%;
+                  max-width: 25rem;
+                  margin: 1rem;
+                  padding: 0px;
+                  margin: 0px;
+                  height: 100vw;
+                  max-height: 25rem;
                 }
               `}
             </style>
           </span>
 
-          <span className="flex flex-col">
-            <span className="flex flex-col">
-              <span>
-                <button>MOON</button>
-                <button>MARS</button>
-                <button>EUROPA</button>
-                <button>TITAN</button>
+          <span className="flex flex-col max-w-[35rem] h-full justify-evenly gap-8 items-center md:items-center lg:items-start">
+            <span className="flex flex-col text-center md:text-center lg:text-left lg:items-start md:items-center items-center">
+              <span className="flex text-[#D0D6F9] gap-2 w-full justify-between max-w-[22rem] ">
+                <button
+                  onClick={() => {
+                    router.push("/destination/moon");
+                  }}
+                >
+                  MOON
+                </button>
+                <button
+                  onClick={() => {
+                    router.push("/destination/mars");
+                  }}
+                >
+                  MARS
+                </button>
+                <button
+                  onClick={() => {
+                    router.push("/destination/europa");
+                  }}
+                >
+                  EUROPA
+                </button>
+                <button
+                  onClick={() => {
+                    router.push("/destination/titan");
+                  }}
+                >
+                  TITAN
+                </button>
               </span>
 
-              <span>{displayData.name}</span>
+              <span className={style.name}>{displayData.name}</span>
 
-              <span>{displayData.description}</span>
+              <span className={style.desc}>{displayData.description}</span>
             </span>
 
-            <span className="flex">
-              <span>
-                <p>AVG. DISTANCE</p>
-                <p>{displayData.distance}</p>
+            <span className="flex flex-col items-center md:flex-col lg:flex-row gap-2 w-full justify-between max-w-[22rem]">
+              <span className="flex flex-col gap-2 items-center md:items-center lg:items-start">
+                <p className={style.attributes}>AVG. DISTANCE</p>
+                <p className={style.value}>{displayData.distance}</p>
               </span>
 
-              <span>
-                <p>EST. TRAVEL TIME</p>
-                <p>{displayData.time}</p>
+              <span className="flex flex-col gap-2 items-center md:items-center lg:items-start">
+                <p className={style.attributes}>EST. TRAVEL TIME</p>
+                <p className={style.value}>{displayData.time}</p>
               </span>
             </span>
           </span>
@@ -111,7 +142,7 @@ export async function getStaticProps({ params }) {
   };
 
   return {
-    props: { displayData: (data["data"][id]) },
+    props: { displayData: data["data"][id] },
   };
 }
 
