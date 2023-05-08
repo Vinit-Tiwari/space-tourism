@@ -3,6 +3,8 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  gap: 2rem;
+  border: 1px solid red;
   justify-content: center;
   flex-direction: column;
   color: white;
@@ -10,10 +12,22 @@
   background-size: cover;
   background-image: url("../public/images/crew/background-crew-desktop.jpg");
 }
-.circle{
-    display: flex;
-    width: 0.8rem;
-    height: 0.8rem;
-    border-radius: 50%;
-    background-color: #979797;
+.circle {
+  display: flex;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 1);
+  opacity: 17%;
+}
+.type {
+  opacity: 54.42%;
+  font-size: 28px;
+}
+.selected {
+  display: flex;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 1);
 }

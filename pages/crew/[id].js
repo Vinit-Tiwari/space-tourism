@@ -9,33 +9,80 @@ function Destination(props) {
   return (
     <Layout>
       <span className={style.container}>
-        <span className="flex gap-[1rem]">
-          <p>02</p>MEET YOUR CREW
+        <span className="flex gap-[1rem] w-full max-w-[70rem] border-2 text-[28px]">
+          <p className="opacity-[25%] font-bold">02</p>MEET YOUR CREW
         </span>
-
-        <span className="flex">
-          <span className="flex flex-col">
-            <span className="flex flex-col">
-              <span>{displayData.type}</span>
-              <span>{displayData.name}</span>
-              <span>{displayData.description}</span>
+        <span className="flex border-2 w-full max-w-[70rem]">
+          <span className="flex flex-col justify-evenly">
+            <span className="flex flex-col gap-[2.5rem]">
+              <span className="flex flex-col">
+                <span className={style.type}>{displayData.type}</span>
+                <span className="text-[54px]">{displayData.name}</span>
+              </span>
+              <span className="text-[18px] text-[#D0D6F9]">
+                {displayData.description}
+              </span>
             </span>
 
             <span className="flex gap-3">
-              <button type="button" onClick={()=>{router.push('/crew/commander')}}>
-                <span className={style.circle}></span>
+              <button
+                type="button"
+                onClick={() => {
+                  router.push("/crew/commander");
+                }}
+              >
+                <span
+                  className={
+                    router.query.id === "commander"
+                      ? `${style.selected}`
+                      : `${style.circle}`
+                  }
+                ></span>
               </button>
 
-              <button type="button" onClick={()=>{router.push('/crew/specialist')}}>
-                <span className={style.circle}></span>
+              <button
+                type="button"
+                onClick={() => {
+                  router.push("/crew/specialist");
+                }}
+              >
+                <span
+                  className={
+                    router.query.id === "specialist"
+                      ? `${style.selected}`
+                      : `${style.circle}`
+                  }
+                ></span>
               </button>
 
-              <button type="button" onClick={()=>{router.push('/crew/pilot')}}>
-                <span className={style.circle}></span>
+              <button
+                type="button"
+                onClick={() => {
+                  router.push("/crew/pilot");
+                }}
+              >
+                <span
+                  className={
+                    router.query.id === "pilot"
+                      ? `${style.selected}`
+                      : `${style.circle}`
+                  }
+                ></span>
               </button>
 
-              <button type="button" onClick={()=>{router.push('/crew/engineer')}}>
-                <span className={style.circle}></span>
+              <button
+                type="button"
+                onClick={() => {
+                  router.push("/crew/engineer");
+                }}
+              >
+                <span
+                  className={
+                    router.query.id === "engineer"
+                      ? `${style.selected}`
+                      : `${style.circle}`
+                  }
+                ></span>
               </button>
             </span>
           </span>
