@@ -1,30 +1,30 @@
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 import style from "../../styles/crew.module.css";
 
-const { default: Layout } = require("@/components/Layout");
+const {default: Layout}=require("@/components/Layout");
 
 function Destination(props) {
-  const { displayData } = props;
-  const router = useRouter();
+  const {displayData}=props;
+  const router=useRouter();
   return (
     <Layout>
       <span className={style.container}>
-        <span className="flex gap-[1rem] w-full max-w-[70rem] border-2 text-[28px]">
-          <p className="opacity-[25%] font-bold">02</p>MEET YOUR CREW
-        </span>
-        <span className="flex border-2 w-full max-w-[70rem]">
-          <span className="flex flex-col justify-evenly">
+        <span className="flex flex-col md:flex-col lg:flex-row w-full max-w-[70rem] items-center md:items-center lg:items-end h-[40rem] gap-[2rem] justify-between">
+          <span className="flex border-2 flex-col justify-evenly h-full">
+            <span className="flex gap-[1rem] w-full max-w-[70rem] text-[28px]">
+              <p className="opacity-[25%] font-bold">02</p>MEET YOUR CREW
+            </span>
             <span className="flex flex-col gap-[2.5rem]">
               <span className="flex flex-col">
-                <span className={style.type}>{displayData.type}</span>
-                <span className="text-[54px]">{displayData.name}</span>
+                <span className="text-center md:text-center lg:text-start opacity-[54.42%] text-[28px]">{displayData.type}</span>
+                <span className="text-center md:text-center lg:text-start text-[54px]">{displayData.name}</span>
               </span>
-              <span className="text-[18px] text-[#D0D6F9]">
+              <span className="text-center md:text-center lg:text-start text-[18px] max-w-[30rem] text-[#D0D6F9]">
                 {displayData.description}
               </span>
             </span>
 
-            <span className="flex gap-3">
+            <span className="flex gap-3 items-center justify-center md:justify-center lg:justify-start">
               <button
                 type="button"
                 onClick={() => {
@@ -33,9 +33,9 @@ function Destination(props) {
               >
                 <span
                   className={
-                    router.query.id === "commander"
+                    router.query.id==="commander"
                       ? `${style.selected}`
-                      : `${style.circle}`
+                      :`${style.circle}`
                   }
                 ></span>
               </button>
@@ -48,9 +48,9 @@ function Destination(props) {
               >
                 <span
                   className={
-                    router.query.id === "specialist"
+                    router.query.id==="specialist"
                       ? `${style.selected}`
-                      : `${style.circle}`
+                      :`${style.circle}`
                   }
                 ></span>
               </button>
@@ -63,9 +63,9 @@ function Destination(props) {
               >
                 <span
                   className={
-                    router.query.id === "pilot"
+                    router.query.id==="pilot"
                       ? `${style.selected}`
-                      : `${style.circle}`
+                      :`${style.circle}`
                   }
                 ></span>
               </button>
@@ -78,9 +78,9 @@ function Destination(props) {
               >
                 <span
                   className={
-                    router.query.id === "engineer"
+                    router.query.id==="engineer"
                       ? `${style.selected}`
-                      : `${style.circle}`
+                      :`${style.circle}`
                   }
                 ></span>
               </button>
@@ -95,13 +95,12 @@ function Destination(props) {
                   background-repeat: no-repeat;
                   background-size: contain;
                   display: flex;
-                  width: 100%;
-                  max-width: 25rem;
                   margin: 1rem;
                   padding: 0px;
                   margin: 0px;
-                  height: 100vw;
-                  max-height: 25rem;
+                  background-position: bottom;
+                  width:30rem;
+                  height:600px;
                 }
               `}
             </style>
@@ -115,18 +114,18 @@ function Destination(props) {
 export async function getStaticPaths() {
   return {
     paths: [
-      { params: { id: "commander" } },
-      { params: { id: "engineer" } },
-      { params: { id: "pilot" } },
-      { params: { id: "specialist" } },
+      {params: {id: "commander"}},
+      {params: {id: "engineer"}},
+      {params: {id: "pilot"}},
+      {params: {id: "specialist"}},
     ],
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params }) {
-  const { id } = params;
-  const data = {
+export async function getStaticProps({params}) {
+  const {id}=params;
+  const data={
     data: {
       commander: {
         type: "COMMANDER",
@@ -160,7 +159,7 @@ export async function getStaticProps({ params }) {
   };
 
   return {
-    props: { displayData: data["data"][id] },
+    props: {displayData: data["data"][id]},
   };
 }
 
