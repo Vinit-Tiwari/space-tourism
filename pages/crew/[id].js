@@ -9,17 +9,17 @@ function Destination(props) {
   return (
     <Layout>
       <span className={style.container}>
-        <span className="flex flex-col md:flex-col lg:flex-row w-full max-w-[70rem] items-center md:items-center lg:items-end h-[40rem] gap-[2rem] justify-between">
-          <span className="flex border-2 flex-col justify-evenly h-full">
-            <span className="flex gap-[1rem] w-full max-w-[70rem] text-[28px]">
-              <p className="opacity-[25%] font-bold">02</p>MEET YOUR CREW
-            </span>
-            <span className="flex flex-col gap-[2.5rem]">
+        <span className="flex gap-[1rem] w-full max-w-[70rem]  md:text-[21px] lg:text-[28px]">
+          <p className="opacity-[25%] font-bold">02</p>MEET YOUR CREW
+        </span>
+        <span className="flex border-2  flex-col md:flex-col lg:flex-row w-full lg:max-w-[70rem] items-center md:items-center lg:items-end h-[40rem] lg:h-[40rem] gap-[2rem]  justify-between">
+          <span className="flex flex-col justify-evenly h-full w-full md:w-full lg:w-max gap-[1rem] max-h-[40rem]">
+            <span className="flex flex-col gap-[0.5rem]">
               <span className="flex flex-col">
-                <span className="text-center md:text-center lg:text-start opacity-[54.42%] text-[28px]">{displayData.type}</span>
-                <span className="text-center md:text-center lg:text-start text-[54px]">{displayData.name}</span>
+                <span className="text-center md:text-center lg:text-start opacity-[54.42%] md:text-[22px] lg:text-[28px]">{displayData.type}</span>
+                <span className="text-center md:text-center lg:text-start md:text-[32px] lg:text-[54px]">{displayData.name}</span>
               </span>
-              <span className="text-center md:text-center lg:text-start text-[18px] max-w-[30rem] text-[#D0D6F9]">
+              <span className="text-center md:text-center m-auto lg:text-start md:text-[15px] lg:text-[18px] max-w-[30rem] text-[#D0D6F9]">
                 {displayData.description}
               </span>
             </span>
@@ -87,7 +87,7 @@ function Destination(props) {
             </span>
           </span>
 
-          <span className="image">
+          <span className="image w-[327px] h-[223px] md:w-[433.09px] md:h-[532px] lg:w-[30rem] lg:h-[600px]">
             <style jsx>
               {`
                 .image {
@@ -99,8 +99,6 @@ function Destination(props) {
                   padding: 0px;
                   margin: 0px;
                   background-position: bottom;
-                  width:30rem;
-                  height:600px;
                 }
               `}
             </style>
