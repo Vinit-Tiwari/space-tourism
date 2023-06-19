@@ -9,17 +9,17 @@ function Destination(props) {
   return (
     <Layout>
       <span className={style.container}>
-        <span className="flex gap-[1rem] w-full max-w-[70rem]  md:text-[21px] lg:text-[28px]">
+        <span className="flex gap-[1rem] justify-center md:justify-start lg:justify-start w-full max-w-[70rem] text-[16px] md:text-[21px] lg:text-[28px]">
           <p className="opacity-[25%] font-bold">02</p>MEET YOUR CREW
         </span>
-        <span className="flex border-2  flex-col md:flex-col lg:flex-row w-full lg:max-w-[70rem] items-center md:items-center lg:items-end h-[40rem] lg:h-[40rem] gap-[2rem]  justify-between">
-          <span className="flex flex-col justify-evenly h-full w-full md:w-full lg:w-max gap-[1rem] max-h-[40rem]">
+        <span className="flex flex-col-reverse md:flex-col lg:flex-row w-full lg:max-w-[70rem] items-center md:items-center lg:items-end lg:h-[34rem] gap-[2rem]  justify-between">
+          <span className="flex flex-col-reverse md:flex-col lg:flex-col justify-evenly h-full w-full md:w-full lg:w-max gap-[1rem] max-h-[40rem]">
             <span className="flex flex-col gap-[0.5rem]">
               <span className="flex flex-col">
-                <span className="text-center md:text-center lg:text-start opacity-[54.42%] md:text-[22px] lg:text-[28px]">{displayData.type}</span>
-                <span className="text-center md:text-center lg:text-start md:text-[32px] lg:text-[54px]">{displayData.name}</span>
+                <span className="text-center md:text-center lg:text-start opacity-[54.42%] text-[18px] md:text-[22px] lg:text-[28px]">{displayData.type}</span>
+                <span className="text-center md:text-center lg:text-start text-[24px] md:text-[32px] lg:text-[54px]">{displayData.name}</span>
               </span>
-              <span className="text-center md:text-center m-auto lg:text-start md:text-[15px] lg:text-[18px] max-w-[30rem] text-[#D0D6F9]">
+              <span className="text-center md:text-center m-auto lg:text-start text-15px md:text-[15px] lg:text-[18px] max-w-[30rem] text-[#D0D6F9]">
                 {displayData.description}
               </span>
             </span>
