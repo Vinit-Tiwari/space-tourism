@@ -48,7 +48,7 @@ function Navbar() {
         <button
           type="button"
           onClick={() => {
-            router.push("/technology");
+            router.push("/technology/vehicle");
           }}
         >
           03 TECHNOLOGY
