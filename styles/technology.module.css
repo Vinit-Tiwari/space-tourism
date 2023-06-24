@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  border: 1px solid red;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("../public/images/technology/background-technology-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
