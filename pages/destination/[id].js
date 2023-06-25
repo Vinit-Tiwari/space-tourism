@@ -40,6 +40,7 @@ function Destination(props) {
                   onClick={() => {
                     router.push("/destination/moon");
                   }}
+                  className={router.query.id==="moon"?"border-b-2 text-lg text-white":""}
                 >
                   MOON
                 </button>
@@ -47,6 +48,8 @@ function Destination(props) {
                   onClick={() => {
                     router.push("/destination/mars");
                   }}
+                  className={router.query.id==="mars"? "border-b-2 text-lg text-white":""}
+
                 >
                   MARS
                 </button>
@@ -54,6 +57,8 @@ function Destination(props) {
                   onClick={() => {
                     router.push("/destination/europa");
                   }}
+                  className={router.query.id==="europa"? "border-b-2 text-lg text-white":""}
+
                 >
                   EUROPA
                 </button>
@@ -61,6 +66,7 @@ function Destination(props) {
                   onClick={() => {
                     router.push("/destination/titan");
                   }}
+                  className={router.query.id==="titan"? "border-b-2 text-lg text-white":""}
                 >
                   TITAN
                 </button>
