@@ -9,40 +9,72 @@ function Destination(props) {
     return (
         <Layout>
             <span className={style.container}>
-                <span className="flex gap-[0.6rem]">
-                    <p>03</p>SPACE LAUNCH 101
+                <span className="flex justify-center md:justify-start lg:justify-start gap-[0.6rem] w-full max-w-[80rem] mt-[5rem] md:mt-[7rem] lg:mt-[5rem] text-[16px] md:text-[20px] lg:text-[28px] font-light">
+                    <p className="text-[#D0D6F9]">03</p>SPACE LAUNCH 101
                 </span>
 
-                <span className="flex ">
-                    <span className="flex">
-                        <span className="flex flex-col">
-                            <span className="font-light text-[16px] md:text-[24px] lg:text-[32px] w-[40px] h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px] border-2 rounded-[50%] flex items-center justify-center">1</span>
-                            <span className="font-light text-[16px] md:text-[24px] lg:text-[32px] w-[40px] h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px] border-2 rounded-[50%] flex items-center justify-center">2</span>
-                            <span className="font-light text-[16px] md:text-[24px] lg:text-[32px] w-[40px] h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px] border-2 rounded-[50%] flex items-center justify-center">3</span>
+                <span className="flex p-[2rem] w-full items-center justify-between flex-col-reverse md:flex-col-reverse lg:flex-row gap-[2rem]">
+                    <span className="flex items-center justify-center gap-[2rem] w-full max-w-[50rem] flex-col md:flex-col lg:flex-row">
+                        <span className="flex flex-row md:flex-row lg:flex-col gap-[2rem] font-light">
+                            <span className={router.query.id==="vehicle"?`${style.selected}`:`${style.circle}`}
+                                onClick={() => {
+                                    router.push("/technology/vehicle");
+                                }}
+                            >1</span>
+                            <span className={router.query.id==="spaceport"?`${style.selected}`:`${style.circle}`}
+                                onClick={() => {
+                                    router.push("/technology/spaceport");
+                                }}
+                            >2</span>
+                            <span className={router.query.id==="capsule"?`${style.selected}`:`${style.circle}`}
+                                onClick={() => {
+                                    router.push("/technology/capsule");
+                                }}
+                            >3</span>
                         </span>
 
                         <span className="flex flex-col">
-                            <span className="text-[14px] md:text-[16px] lg:text-[16px]">THE TERMINOLOGY…</span>
-                            <span className="text-[24px] md:text-[40px] lg:text-[56px] font-light">{displayData.name}</span>
-                            <span className="text-[15px] md:text-[16px] lg:text-[18px]">{displayData.description}</span>
+                            <span className="m-auto md:m-auto lg:m-0 text-[14px] md:text-[16px] lg:text-[16px] text-[#D0D6F9]">THE TERMINOLOGY…</span>
+                            <span className="m-auto md:m-auto lg:m-0 text-[24px] md:text-[40px] lg:text-[56px] font-light">{displayData.name}</span>
+                            <span className="m-auto md:m-auto lg:m-0 text-center md:text-center lg:text-left text-[15px] md:text-[16px] text-[#D0D6F9] lg:text-[18px] max-w-[23rem]">{displayData.description}</span>
                         </span>
                     </span>
 
-                    <span className="image ">
+                    <span className="image">
                         <style jsx>
                             {`
                                 .image {
+                                display:flex;
+                                align-items: center;
+                                justify-content: center;
                                 background-image: url(${displayData.urlLandscape});
                                 background-repeat: no-repeat;
-                                background-size: cover;
-                                display: flex;
-                                width: 100%;
-                                max-width: 515px;
-                                margin: 1rem;
-                                padding: 0px;
-                                margin: 0px;
-                                height: 100vw;
-                                max-height: 527px;
+                                background-size: contain;
+                                background-position: center;
+                                background-clip: content-box;
+                                width:100vw;
+                                height:170px;
+                                }
+                                @media (min-width: 640px) {
+                                    .image{
+                                        width:100vw;
+                                        height:170px;
+                                        background-image: url(${displayData.urlLandscape});
+                                    }
+                                }
+                                @media (min-width: 768px) {
+                                    .image{
+                                        width:100vw;
+                                        height:310px;
+                                        background-image: url(${displayData.urlLandscape});
+                                    }
+                                }
+                                @media (min-width: 1024px) {
+                                    .image{
+                                        width:515px;
+                                        height:527px;
+                                        background-image: url(${displayData.urlPortrait});
+                                    }
                                 }
                             `}
                         </style>
