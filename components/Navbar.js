@@ -1,5 +1,5 @@
 import styles from "../styles/navbar.module.css"
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 
 function Navbar() {
   const router=useRouter()
@@ -24,7 +24,8 @@ function Navbar() {
             router.push("/");
           }}
         >
-          00 HOME
+          <p className="hidden lg:flex">00</p>
+          HOME
         </button>
 
         <button
@@ -33,7 +34,8 @@ function Navbar() {
             router.push("/destination/moon");
           }}
         >
-          01 DESTINATION
+          <p className="hidden lg:flex">01</p>
+          DESTINATION
         </button>
 
         <button
@@ -42,7 +44,8 @@ function Navbar() {
             router.push("/crew/commander");
           }}
         >
-          02 CREW
+          <p className="hidden lg:flex">02</p>
+          CREW
         </button>
 
         <button
@@ -51,7 +54,8 @@ function Navbar() {
             router.push("/technology/vehicle");
           }}
         >
-          03 TECHNOLOGY
+          <p className="hidden lg:flex">03</p>
+          TECHNOLOGY
         </button>
       </span>
     </span>
