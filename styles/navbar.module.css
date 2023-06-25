@@ -1,22 +1,66 @@
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1rem 2rem;
-    position: absolute;
-    background-color: transparent;
-    z-index: 10;
-    width: 100%;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: absolute;
+  background-color: transparent;
+  z-index: 10;
+  width: 100%;
+  height: 6rem;
 }
-.menu{
+.menu {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 65%;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  color: white;
+}
+.menu button {
+  display: flex;
+  gap: 0.3rem;
+  padding: 1.5rem 0rem;
+}
+
+@media (min-width: 768px) {
+  .menu {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 50%;
-    padding:1.5rem 1rem;
-    gap: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    color: white;
+  }
+  .menuoptions{
+    display: none;
+  }
+}
+
+.hamburger {
+  width: 1.6 rem;
+  height: 0.2rem;
+  background-color: white;
+}
+.menuoptions {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px);
+  color: white;
+  position: fixed;
+  gap: 1.5rem;
+  overflow: hidden;
+  height: 100%;
+  width: 80vw;
+  align-items: self-start;
+  justify-content: start;
+  padding-top: 5rem;
+  z-index: 1;
+  top: 0%;
+  right: 0;
+}
+.menuoptions button {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0rem 2rem;
+  padding: 0.5rem 0rem;
 }
